@@ -1,0 +1,19 @@
+const MOVIE_LIST = [
+    {movie_no:0, src: '89058_320.jpg',cinematag:('screenX','IMAX','4DX'), title:'미키17', grade:'90', res_per:'68.0', director:'봉준호', actor:'로버트 패틴슨 ,  나오미 애키 ,  스티븐 연 ,  토니 콜렛 ,  마크 러팔로',genre:'어드벤처, SF, 드라마',age:'15세이상관람가',info:'137분, 미국', open: '2025.02.28'},
+    {movie_no:1, src: '89423_320.jpg',cinematag:'', title: '이찬원 콘서트 찬가: 디어 마이 찬스', grade: '99', res_per: '5.6', director:'오정민', actor:'이찬원',genre:'',age:'전체관람가',info:'117분, 한국', open:'2025.02.26'},
+    {movie_no:2, src: '89386_320.jpg',cinematag:('screenX','4DX'), title: '퇴마록', grade: '96', res_per: '4.8', director:'김동철', actor:'최한 ,  남도형 ,  정유정 ,  김연우 ,  홍승효 ,  황창영 ,  김민주(성우) ,  표영재',genre:'애니메이션, 액션, 미스터리',age:'12세이상관람가',info:'85분, 한국', open:'2025.02.21'},
+    {movie_no:3, src: '89434_320.jpg',cinematag:'', title: '캡틴 아메리카: 브레이브 뉴 월드', grade: '89', res_per: '4.5', director:'줄리어스 오나', actor:'안소니 마키 ,  해리슨 포드 ,  대니 라미레즈 ,  칼 럼블리 ,  지안카를로 에스포지토 ,  리브 타일러 ,  팀 블레이크 넬슨',genre:'액션, 어드벤처, SF',age:'12세이상관람가',info:'118분, 미국', open:'2025.02.12'},
+    {movie_no:4, src: '89438_320.jpg',cinematag:'', title: '그 시절, 우리가 좋아했던 소녀', grade: '81', res_per: '3.6', director:'조영명', actor:'진영, 다현',genre:'로맨스, 멜로',age:'12세이상관람가',info:'102분, 한국', open:'2025.02.21'},
+    {movie_no:5, src: '89425_320.jpg',cinematag:'', title:'콘클라베', grade:'98', res_per:'2.9', director:'에드워드 버거', actor:'랄프 파인즈 ,  스탠리 투치 ,  존 리스고 ,  이사벨라 로셀리니',genre:'드라마, 스릴러',age:'12세이상관람가',info:'120분, 미국', open: '2025.03.05'},
+    {movie_no:6, src: '78085_320.jpg',cinematag:'', title: '위플래쉬', grade: '95', res_per: '2.4', director:'데이미언 셔젤', actor:'마일즈 텔러, J.K. 시몬스',genre:'드라마',age:'15세이상관람가',info:'106분, 미국', open:'2025.03.12(재개봉)'},
+    {movie_no:7, src: '80929_320.jpg',cinematag:'', title: '아이 엠 러브', grade: '88', res_per: '0', director:'루카 구아다니노', actor:'틸다 스윈튼 ,  플라비오 파렌티 ,  알바 로르와처',genre:'드라마',age:'청소년관람불가',info:'120분, 이탈리아', open:'2025.02.26(재개봉)'},
+    {movie_no:8, src: '88985_320.jpg',cinematag:'', title: '서브스턴스', grade: '92', res_per: '0.1', director:'코랄리 파르자', actor:'데미 무어 ,  마가렛 퀄리 ,  데니스 퀘이드',genre:'스릴러',age:'청소년관람불가',info:'141분, 영국', open:'2024.12.11'},
+    {movie_no:9, src: '89438_320.jpg',cinematag:'', title: '그 시절, 우리가 좋아했던 소녀', grade: '81', res_per: '3.6', director:'조영명', actor:'진영, 다현',genre:'로맨스, 멜로',age:'12세이상관람가',info:'102분, 한국', open:'2025.02.21'},
+    {movie_no:10, src: '89058_320.jpg',cinematag:'', title:'미키17', grade:'90', res_per:'68.0', director:'봉준호', actor:'로버트 패틴슨 ,  나오미 애키 ,  스티븐 연 ,  토니 콜렛 ,  마크 러팔로',genre:'어드벤처, SF, 드라마',age:'15세이상관람가',info:'137분, 미국', open: '2025.02.28'},
+    {movie_no:11, src: '89423_320.jpg',cinematag:'', title: '이찬원 콘서트 찬가: 디어 마이 찬스', grade: '99', res_per: '5.6', director:'오정민', actor:'이찬원',genre:'',age:'전체관람가',info:'117분, 한국', open:'2025.02.26'},
+    {movie_no:12, src: '89386_320.jpg',cinematag:'', title: '퇴마록', grade: '96', res_per: '4.8', director:'김동철', actor:'최한 ,  남도형 ,  정유정 ,  김연우 ,  홍승효 ,  황창영 ,  김민주(성우) ,  표영재',genre:'애니메이션, 액션, 미스터리',age:'12세이상관람가',info:'85분, 한국', open:'2025.02.21'},
+    {movie_no:13, src: '89434_320.jpg',cinematag:'', title: '캡틴 아메리카: 브레이브 뉴 월드', grade: '89', res_per: '4.5', director:'줄리어스 오나', actor:'안소니 마키 ,  해리슨 포드 ,  대니 라미레즈 ,  칼 럼블리 ,  지안카를로 에스포지토 ,  리브 타일러 ,  팀 블레이크 넬슨',genre:'액션, 어드벤처, SF',age:'12세이상관람가',info:'118분, 미국', open:'2025.02.12'},
+    {movie_no:14, src: '89438_320.jpg',cinematag:'', title: '그 시절, 우리가 좋아했던 소녀', grade: '81', res_per: '3.6', director:'조영명', actor:'진영, 다현',genre:'로맨스, 멜로',age:'12세이상관람가',info:'102분, 한국', open:'2025.02.21'},
+    {movie_no:15, src: '89058_320.jpg',cinematag:'', title:'미키17', grade:'90', res_per:'68.0', director:'봉준호', actor:'로버트 패틴슨 ,  나오미 애키 ,  스티븐 연 ,  토니 콜렛 ,  마크 러팔로',genre:'어드벤처, SF, 드라마',age:'15세이상관람가',info:'137분, 미국', open: '2025.02.28'},
+    {movie_no:16, src: '89423_320.jpg',cinematag:'', title: '이찬원 콘서트 찬가: 디어 마이 찬스', grade: '99', res_per: '5.6', director:'오정민', actor:'이찬원',genre:'',age:'전체관람가',info:'117분, 한국', open:'2025.02.26'}
+]
