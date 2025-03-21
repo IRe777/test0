@@ -17,4 +17,3 @@ const MOVIE_LIST = [
     {movie_no:15, src: '89058_320.jpg',cinematag:['screenX','IMAX','4DX'], title:'미키17', etitle:'Micky 17',grade:'90', res_per:'68.0', director:'봉준호', actor:'로버트 패틴슨 ,  나오미 애키 ,  스티븐 연 ,  토니 콜렛 ,  마크 러팔로',genre:'어드벤처, SF, 드라마',age:'15세이상관람가',info:'137분, 미국', open: '2025.02.28'},
     {movie_no:16, src: '89423_320.jpg',cinematag:['screenX'], title: '이찬원 콘서트 찬가: 디어 마이 찬스', etitle:'',grade: '99', res_per: '5.6', director:'오정민', actor:'이찬원',genre:'',age:'전체관람가',info:'117분, 한국', open:'2025.02.26'}
 ]
-    
