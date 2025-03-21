@@ -341,9 +341,9 @@
             <article class="minfo_article">
                 <aside class="minfo_aside" style="background-image: url(./cgv_img/movie/${movie.src});">
                     <div class="age">
-                        <img src="${MOVIE_LIST.age === '전체관람가' ? './cgv_img/all.svg'
-                                                : MOVIE_LIST.age === '12세이상관람가' ? './cgv_img/12.svg'
-                                                    : MOVIE_LIST.age === '15세이상관람가' ? './cgv_img/15.svg'
+                        <img src="${movie.age == '전체관람가' ? './cgv_img/all.svg'
+                                                : movie.age == '12세이상관람가' ? './cgv_img/12.svg'
+                                                    : movie.age == '15세이상관람가' ? './cgv_img/15.svg'
                                                         : './cgv_img/19.svg'}" alt="">
                     </div>
                     <a href="./cgv_img/movie/${movie.src}">
