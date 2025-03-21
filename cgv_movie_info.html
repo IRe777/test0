@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./cgv.css">
+    <link rel="stylesheet" href="./cgv_login.css">
+    <link rel="stylesheet" href="./cov_movie_info.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./cgv_movieDB.js"></script>
+    <script>
+        function get_url_info(key) {
+            let url = location.href; // 224-2.페이지이동_연습2(상세페이지).html?cateNo=0&movieNo=2 
+            url = url.split("?");// [224-2.페이지이동_연습2(상세페이지).html  ,  cateNo=0&movieNo=2 ]
+            if(url.length > 1) { // 1개보다 크면 정보가(?) 1개 이상 있다 라는 뜻
+                url = url[1].split("&"); // cateNo=0&movieNo=2  =>  [cateNo=0, movieNo=2]
+
+                for(let i=0; i<url.length; i++){
+                    let tmp_url=url[i].split("=") // i=0, cateNo=0 => [cateNo , 0]
+                                                // i=1, movieNo=2 => [movieNo , 2]
+                        
+                    if(tmp_url[0] == key) {
+                        console.log(tmp_url[1])
+                        return tmp_url[1];
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="headad">
+            <input type="radio" class="adbtn" name="btn" id="topad">
+            <label for="topad">
+                <div class="ckbox">닫기</div>
+            </label>
+            <div class="headad_imgwrap"><a href="#"><img src="./cgv_img/0221_980x80.png" alt=""></a></div>
+        </div>
+        <header class="header">
+            <div class="h_left">
+                <a href="./cgv.html">
+                    <div class="logo"><img src="./cgv_img/logoRed.png" alt=""></div>
+                </a>
+                <div class="logo_txt">DEEP DIVE SPACE</div>
+            </div>
+            <div class="h_right">
+                <div class="hcardlogo"><a href="#">
+                        <img src="./cgv_img/hyundaicard.png" alt="카드"></a>
+                </div>
+                <ul class="h_right_ul">
+                    <li class="h_right_li">
+                        <a href="#">
+                            <div class="h_logo"><img src="./cgv_img/loginPassword.png" alt=""></div>
+                            <div class="h_txt">로그인</div>
+                        </a>
+                    </li>
+                    <li class="h_right_li">
+                        <a href="#">
+                            <div class="h_logo"><img src="./cgv_img/loginJoin.png" alt=""></div>
+                            <div class="h_txt">회원가입</div>
+                        </a>
+                    </li>
+                    <li class="h_right_li">
+                        <a href="#">
+                            <div class="h_logo"><img src="./cgv_img/loginMember.png" alt=""></div>
+                            <div class="h_txt">MY CGV</div>
+                        </a>
+                    </li>
+                    <li class="h_right_li">
+                        <a href="#">
+                            <div class="h_logo"><img src="./cgv_img/loginCustomer.png" alt=""></div>
+                            <div class="h_txt">고객센터</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="navwrap" id="navwrap">
+            <nav class="nav" onmouseenter="nav_menu()" onmouseleave="nav_close_menu()">
+                <div class="hambur">
+                    <input type="radio" class="mham" name="m" id="mham">
+                    <input type="radio" class="mham_close" name="m" id="mham_close" checked>
+                    <label for="mham">
+                        <div class="navb">
+                            <div class="navb_line navb_line1"></div>
+                            <div class="navb_line navb_line2"></div>
+                            <div class="navb_line navb_line3"></div>
+                        </div>
+                    </label>
+                    <label for="mham_close">
+                        <div class="navb_close">
+                            <div class="navb_line_close navb_line_close1"></div>
+                            <div class="navb_line_close navb_line_close2"></div>
+                            <div class="navb_line_close navb_line_close3"></div>
+                        </div>
+                    </label>
+                    <nav class="m_nav">
+                        <img src="./cgv_img/logoWhite.png" alt="">
+                    </nav>
+                    <div class="m_cont">
+                        <div class="m_dir">
+                            <ul class="m_dir_ul">
+                                <li class="m_dir_li">
+                                    <a href="#">
+                                        <div class="m_dir_logo"><img src="./cgv_img/res.png" alt=""></div>
+                                        <div class="m_dir_txt">예매하기</div>
+                                    </a>
+                                </li>
+                                <li class="m_dir_li">
+                                    <a href="#">
+                                        <div class="m_dir_logo"><img src="./cgv_img/sch.png" alt=""></div>
+                                        <div class="m_dir_txt">상영스케줄</div>
+                                    </a>
+                                </li>
+                                <li class="m_dir_li">
+                                    <a href="#">
+                                        <div class="m_dir_logo"><img src="./cgv_img/fast.png" alt=""></div>
+                                        <div class="m_dir_txt">패스트오더</div>
+                                    </a>
+                                </li>
+                                <li class="m_dir_li">
+                                    <a href="#">
+                                        <div class="m_dir_logo"><img src="./cgv_img/tic.png" alt=""></div>
+                                        <div class="m_dir_txt">모바일티켓</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="m_ser">
+                            <p>서비스</p>
+                            <ul class="m_ul">
+                                <li class="m_li">통합검색</li>
+                                <li class="m_li">영화</li>
+                                <li class="m_li">영화관 찾기</li>
+                                <li class="m_li">특별관</li>
+                                <li class="m_li">이벤트</li>
+                                <li class="m_li">기프트샵</li>
+                                <li class="m_li">포토플레이</li>
+                                <li class="m_li">클럽서비스</li>
+                                <li class="m_li">무비로그</li>
+                                <li class="m_li">My CGV</li>
+                            </ul>
+                        </div>
+                        <div class="m_qna">
+                            <p>고객문의</p>
+                            <ul class="m_ul">
+                                <li class="m_li">고객센터</li>
+                                <li class="m_li m_talk">상담톡></li>
+                                <li class="m_li">할인정보 <span>추천</span></li>
+                                <li class="m_li">단체/대관문의</li>
+                            </ul>
+                        </div>
+                        <div class="m_login">
+                            <ul class="m_login_ul">
+                                <li class="m_login_li"><a href="#"><img src="./cgv_img/instagram-logo-24.png"
+                                            alt=""></a></li>
+                                <li class="m_login_li"><a href="#"><img src="./cgv_img/facebook-logo-24.png" alt=""></a>
+                                </li>
+                                <li class="m_login_li"><a href="#"><img src="./cgv_img/youtube-logo-24.png" alt=""></a>
+                                </li>
+                                <li class="m_login_li"><a href="#"><img src="./cgv_img/linkedin-logo-24.png" alt=""></a>
+                                </li>
+                            </ul>
+                            <a href="#">로그인</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav_ul">
+                    <li class="nav_li active_box"><img src="./cgv_img/logoWhite.png" alt=""></li>
+                    <li class="nav_li"><a href="#">영화</a></li>
+                    <li class="nav_li"><a href="#">극장</a></li>
+                    <li class="nav_li nav_li_focus"><a href="#">예매</a></li>
+                    <li class="nav_li"><a href="#">스토어</a></li>
+                    <li class="nav_li"><a href="#">이벤트</a></li>
+                    <li class="nav_li"><a href="#">혜택</a></li>
+                </ul>
+                <div class="search">
+                    <form action="#">
+                        <input type="text" name="ms_input" placeholder="콘클라베" autocomplete="off">
+                        <button><img src="./cgv_img/search.png" alt=""></button>
+                    </form>
+                </div>
+            </nav>
+            <div class="transwrap">
+                <ul class="trans_ul" onmouseenter="nav_menu()" onmouseleave="nav_close_menu()">
+                    <li class="trans_li">
+                        <div>영화</div>
+                        <div>무비차트</div>
+                        <div>아트하우스</div>
+                        <div>ICECON</div>
+                    </li>
+                    <li class="trans_li">
+                        <div>극장</div>
+                        <div>CGV 극장</div>
+                        <div>특별관</div>
+                    </li>
+                    <li class="trans_li">
+                        <div>예매</div>
+                        <div>상영스케줄</div>
+                        <div>상영스케줄</div>
+                        <div>English Ticketing</div>
+                        <div>English Schedule</div>
+                    </li>
+                    <li class="trans_li">
+                        <div>스토어</div>
+                        <div>패키지</div>
+                        <div>영화관람권</div>
+                        <div>기프트카드</div>
+                        <div>콤보</div>
+                        <div>팝콘</div>
+                        <div>음료</div>
+                        <div>스낵</div>
+                        <div>씨네샵 ></div>
+                    </li>
+                    <li class="trans_li">
+                        <div>이벤트</div>
+                        <div>SPECIAL</div>
+                        <div>영화/예매</div>
+                        <div>멤버십/CLUB</div>
+                        <div>CGV 극장별</div>
+                        <div>제휴할인</div>
+                        <div>당첨자 발표</div>
+                        <div>종료된 이벤트</div>
+                    </li>
+                    <li class="trans_li">
+                        <div>혜택</div>
+                        <div>CGV 할인정보</div>
+                        <div>CLUB 서비스</div>
+                        <div>VIP 라운지</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main class="minfo_main">
+            <!-- <article class="minfo_article">
+                <aside class="minfo_aside">
+                    <div class="age">
+                        <img src="./cgv_img/all.svg" alt="">
+                    </div>
+                    <a href="./cgv_img/movie/78085_320.jpg">
+                        <div class="btn_plus">+</div>
+                    </a>
+                </aside>
+                <aside class="minfo_moviescript">
+                    <div class="minfo_upper">
+                        <b>미키 17</b><span class="onboard">현재상영중</span><br>
+                        <span>Mickey 17</span>
+                        <div>예매율 7.7% | <img src="./cgv_img/eggGoldenegg.png" alt="">91%</div>
+                    </div>
+                    <div class="minfo_down">
+                        <div class="minfo_txt">
+                            <span>감독 : 봉준호</span><span> / 배우 : 로버트 패틴슨 , 나오미 애키 , 스티븐 연 , 토니 콜렛 , 마크 러팔로</span><br>
+                            <span>장르 : 어드벤처, SF, 드라마</span><span> / 기본 정보 : 15세이상관람가, 137분, 미국</span><br>
+                            <span>개봉 : 2025.02.28</span>
+                        </div>
+                        <ul>
+                            <li class="minfo_freeegg"><img src="./cgv_img/eggGoldenegg.png" alt="">프리에그</li>
+                            <li class="minfo_res">예매하기</li>
+                        </ul>
+                        <div class="minfo_cinema_tag">
+                            <div></div>
+                        </div>
+                    </div>
+                </aside>
+            </article>
+            <div class="minfo_data">
+                <article class="minfo_data_article">
+                    <nav class="minfo_data_nav">
+                        <ul>
+                            <li><img src="./cgv_img/ico_finger.png" alt="">주요정보</li>
+                            <li>감독/출연</li>
+                            <li>트레일러</li>
+                            <li>스틸컷</li>
+                            <li>평점/리뷰</li>
+                            <li>상영시간표</li>
+                        </ul>
+                    </nav>
+                    <div class="minfo_story">
+                        <b>“당신은 몇 번째 미키입니까?”</b><br>
+                        <span>친구 ‘티모’와 함께 차린 마카롱 가게가 쫄딱 망해 거액의 빚을 지고<br>
+                            못 갚으면 죽이겠다는 사채업자를 피해 지구를 떠나야 하는 ‘미키’.<br>
+                            기술이 없는 그는, 정치인 ‘마셜’의 얼음행성 개척단에서<br>
+                            위험한 일을 도맡고, 죽으면 다시 프린트되는 익스펜더블로 지원한다.<br>
+                            4년의 항해와 얼음행성 니플하임에 도착한 뒤에도 늘 ‘미키’를 지켜준 여자친구 ‘나샤’.<br>
+                            그와 함께, ‘미키’는 반복되는 죽음과 출력의 사이클에도 익숙해진다.<br>
+                            그러나 ‘미키 17’이 얼음행성의 생명체인 ‘크리퍼’와 만난 후 죽을 위기에서 돌아와 보니<br>
+                            이미 ‘미키 18’이 프린트되어 있다.<br>
+                            행성 당 1명만 허용된 익스펜더블이 둘이 된 ‘멀티플’ 상황<br>
+                            둘 중 하나는 죽어야 하는 현실 속에 걷잡을 수 없는 사건이 기다리고 있었으니…<br>
+                            <br>
+                            “자알 죽고, 내일 만나”<br>
+                        </span>
+                    </div>
+                    <div class="middle_ad"><img src="./cgv_img/0318_800x90.jpg" alt=""></div>
+                    <div class="minfo_trailer"><b>트레일러</b><span>6건</span><a href="#">+</a></div>
+                    <ul class="minfo_trailer_ul">
+                        <li>
+                            <div class="box_img">
+                                <img src="./cgv_img/89058235308_1024.jpg" alt="">
+                                <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                            </div>
+                            <div class="minfo_content">
+                                <span class="icon">HD</span><b>GIFT</b><br>
+                                <span>2025.03.12</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_img">
+                                <img src="./cgv_img/89058235257_1024.jpg" alt="">
+                                <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                            </div>
+                            <div class="minfo_content">
+                                <span class="icon">HD</span><b>Price Of One Review</b><br>
+                                <span>2025.03.12</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_img">
+                                <img src="./cgv_img/89058235256_1024.jpg" alt="">
+                                <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                            </div>
+                            <div class="minfo_content">
+                                <span class="icon">HD</span><b>Dying</b><br>
+                                <span>2025.03.12</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="minfo_snap"><b>스틸컷</b><span>1/21건</span><a href="#">+</a></div>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./cgv_img/snap/1.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/2.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/3.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/4.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/5.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/6.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/7.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/8.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/9.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/10.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/11.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/12.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/13.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/14.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/15.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/16.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/17.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/18.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/19.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/20.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-button-next" id="swp_n"></div>
+                        <div class="swiper-button-prev" id="swp_p"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </article>
+                <aside class="minfo_data_aside">
+                    <img src="./cgv_img/0318_160x300.jpg" alt="">
+                    <img src="./cgv_img/160x300.png" alt="">
+                </aside>
+            </div> -->
+        </main>
+        <div class="footerwrap">
+            <footer class="footer">
+                <div class="f_top">
+                    <ul class="f_top_ul">
+                        <li class="f_top_li"><a href="#">회사소개</a></li>
+                        <li class="f_top_li"><a href="#">지속가능경영</a></li>
+                        <li class="f_top_li"><a href="#">IR</a></li>
+                        <li class="f_top_li"><a href="#">채용정보</a></li>
+                        <li class="f_top_li"><a href="#">광고/제휴/출점문의</a></li>
+                        <li class="f_top_li"><a href="#">이용약관</a></li>
+                        <li class="f_top_li"><a href="#">편성기준</a></li>
+                        <li class="f_top_li f_top_li_focus"><a href="#">개인정보처리방침</a></li>
+                        <li class="f_top_li"><a href="#">법적고지</a></li>
+                        <li class="f_top_li"><a href="#">이메일주소무단수집거부</a></li>
+                        <li class="f_top_li"><a href="#">윤리경영</a></li>
+                        <li class="f_top_li"><a href="#">사이버감사실</a></li>
+                    </ul>
+                </div>
+                <div class="f_vline"></div>
+                <div class="f_bot">
+                    <p>
+                        (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                        대표이사:허민회 사업자등록번호:104-81-45690 통신판매업신고번호:2017-서울용산-0662 사업자정보확인<br>
+                        호스팅사업자:CJ올리브네트웍스 대표이메일:cjcgvmaster@cj.net<br>
+                        © CJ CGV. All Rights Reserved
+                    </p>
+                </div>
+                <div class="direct">
+                    <!-- 나중에 계열사 바로가기로 바꿀것 -->
+                    <select name="12" id="34" class="lang">
+                        <option value="English">English</option>
+                        <option value="한국어">한국어</option>
+                        <option value="German">German</option>
+                        <option value="France">France</option>
+                        <option value="简体中文(중국어 간체)">简体中文</option>
+                        <option value="繁體中文(중국어 번체)">繁體中文</option>
+                        <option value="日本語(일본어)">日本語</option>
+                        <option value="ไทย(태국어)">ไทย</option>
+                        <option value="Български(불가리아어)">Български</option>
+                        <option value="Čeština(체코어)">Čeština</option>
+                    </select>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="remote">
+        <div class="reserv"><a href="../css/23.list-style.html" target="_blank">예매하기</a></div>
+        <div class="totop"><a href="#">↑</a></div>
+    </div>
+    <script>
+        // scroll높이에 따른 nav 변환
+        let ttt = document.getElementById('navwrap').offsetTop + 60;
+        let chkSwitch = true;
+        window.addEventListener('scroll', () => {
+            let navLi = document.getElementsByClassName('nav_li')
+            if (chkSwitch == true && window.scrollY >= ttt) {
+                document.getElementById('navwrap').classList.add("navwrap_active");
+                navLi[0].classList.remove("active_box")
+                navLi[3].classList.remove("nav_li_focus")
+                document.getElementsByClassName('remote')[0].style.display = "flex"
+                document.getElementsByClassName('wrap')[0].style.paddingTop = "55px"
+                chkSwitch = false;
+            }
+            else if (chkSwitch == false && window.scrollY < ttt) {
+                document.getElementById('navwrap').classList.remove("navwrap_active");
+                navLi[0].classList.add("active_box")
+                navLi[3].classList.add("nav_li_focus")
+                document.getElementsByClassName('remote')[0].style.display = "none"
+                document.getElementsByClassName('wrap')[0].style.paddingTop = "0"
+                chkSwitch = true;
+            }
+        });
+        /////////////////////////////////////////////////////////
+        // nav 메뉴 펼치기
+        let transUl = document.getElementsByClassName('trans_ul');
+        function nav_menu() {
+            transUl[0].style.height = '360px';
+        }
+        function nav_close_menu() {
+            transUl[0].style.height = '0px';
+        }
+        /////////////////////////////////////////////////////////
+
+        let idx = get_url_info("movie_no");
+        console.log("movie_no: ",idx)
+        let movie = MOVIE_LIST[idx];
+        let pUl = document.getElementsByClassName(`minfo_main`);
+            // 영화관 태그별 이미지삽입
+            // let tagHTML = '';
+            // if (MOVIE_LIST[i].cinematag && MOVIE_LIST[i].cinematag.length > 0) {
+            //     for (let j = 0; j < MOVIE_LIST[i].cinematag.length; j++) {
+            //         let tag = MOVIE_LIST[i].cinematag[j]; // 현재 태그 가져오기
+            //         if (tag === 'screenX') { tagHTML += '<img src="./cgv_img/screenx_white.png" alt="screenX">'; }
+            //         else if (tag === 'IMAX') { tagHTML += '<img src="./cgv_img/imax_white.png" alt="IMAX">'; }
+            //         else if (tag === '4DX') { tagHTML += '<img src="./cgv_img/forDX_white.png" alt="4DX">'; }
+            //     }
+            // }
+            ///////////////////
+            pUl[0].innerHTML += `
+            <article class="minfo_article">
+                <aside class="minfo_aside" style="background-image: url(./cgv_img/movie/${movie.src});">
+                    <div class="age">
+                        <img src="./cgv_img/all.svg" alt="">
+                    </div>
+                    <a href="./cgv_img/movie/${movie.src}">
+                        <div class="btn_plus">+</div>
+                    </a>
+                </aside>
+                <aside class="minfo_moviescript">
+                    <div class="minfo_upper">
+                        <b>${movie.title}</b><span class="onboard">현재상영중</span><br>
+                        <span>${movie.etitle}</span>
+                        <div>예매율 ${movie.res_per}% | <img src="./cgv_img/eggGoldenegg.png" alt="">${movie.grade}</div>
+                    </div>
+                    <div class="minfo_down">
+                        <div class="minfo_txt">
+                            <span>감독 : ${movie.director}</span><span> / 배우 : ${movie.actor}</span><br>
+                            <span>장르 : ${movie.genre}</span><span> / 기본 정보 : ${movie.age}, ${movie.info}</span><br>
+                            <span>개봉 : ${movie.open}</span>
+                        </div>
+                        <ul>
+                            <li class="minfo_freeegg"><img src="./cgv_img/eggGoldenegg.png" alt="">프리에그</li>
+                            <li class="minfo_res">예매하기</li>
+                        </ul>
+                        <div class="minfo_cinema_tag">
+                            <div></div>
+                        </div>
+                    </div>
+                </aside>
+            </article>
+            <div class="minfo_data">
+                <article class="minfo_data_article">
+                    <nav class="minfo_data_nav">
+                        <ul>
+                            <li><img src="./cgv_img/ico_finger.png" alt="">주요정보</li>
+                            <li>감독/출연</li>
+                            <li>트레일러</li>
+                            <li>스틸컷</li>
+                            <li>평점/리뷰</li>
+                            <li>상영시간표</li>
+                        </ul>
+                    </nav>
+                    <div class="minfo_story">
+                        <b>“당신은 몇 번째 미키입니까?”</b><br>
+                        <span>친구 ‘티모’와 함께 차린 마카롱 가게가 쫄딱 망해 거액의 빚을 지고<br>
+                            못 갚으면 죽이겠다는 사채업자를 피해 지구를 떠나야 하는 ‘미키’.<br>
+                            기술이 없는 그는, 정치인 ‘마셜’의 얼음행성 개척단에서<br>
+                            위험한 일을 도맡고, 죽으면 다시 프린트되는 익스펜더블로 지원한다.<br>
+                            4년의 항해와 얼음행성 니플하임에 도착한 뒤에도 늘 ‘미키’를 지켜준 여자친구 ‘나샤’.<br>
+                            그와 함께, ‘미키’는 반복되는 죽음과 출력의 사이클에도 익숙해진다.<br>
+                            그러나 ‘미키 17’이 얼음행성의 생명체인 ‘크리퍼’와 만난 후 죽을 위기에서 돌아와 보니<br>
+                            이미 ‘미키 18’이 프린트되어 있다.<br>
+                            행성 당 1명만 허용된 익스펜더블이 둘이 된 ‘멀티플’ 상황<br>
+                            둘 중 하나는 죽어야 하는 현실 속에 걷잡을 수 없는 사건이 기다리고 있었으니…<br>
+                            <br>
+                            “자알 죽고, 내일 만나”<br>
+                        </span>
+                    </div>
+                    <!-- 그래프 생략 -->
+                    <div class="middle_ad"><img src="./cgv_img/0318_800x90.jpg" alt=""></div>
+                    <div class="minfo_trailer"><b>트레일러</b><span>6건</span><a href="#">+</a></div>
+                    <ul class="minfo_trailer_ul">
+                        <li>
+                            <div class="box_img">
+                                <img src="./cgv_img/89058235308_1024.jpg" alt="">
+                                <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                            </div>
+                            <div class="minfo_content">
+                                <span class="icon">HD</span><b>GIFT</b><br>
+                                <span>2025.03.12</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_img">
+                                <img src="./cgv_img/89058235257_1024.jpg" alt="">
+                                <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                            </div>
+                            <div class="minfo_content">
+                                <span class="icon">HD</span><b>Price Of One Review</b><br>
+                                <span>2025.03.12</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_img">
+                                <img src="./cgv_img/89058235256_1024.jpg" alt="">
+                                <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                            </div>
+                            <div class="minfo_content">
+                                <span class="icon">HD</span><b>Dying</b><br>
+                                <span>2025.03.12</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="minfo_snap"><b>스틸컷</b><span>1/21건</span><a href="#">+</a></div>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./cgv_img/snap/1.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/2.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/3.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/4.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/5.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/6.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/7.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/8.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/9.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/10.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/11.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/12.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/13.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/14.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/15.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/16.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/17.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/18.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/19.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="./cgv_img/snap/20.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-button-next" id="swp_n"></div>
+                        <div class="swiper-button-prev" id="swp_p"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </article>
+                <aside class="minfo_data_aside">
+                    <img src="./cgv_img/0318_160x300.jpg" alt="">
+                    <img src="./cgv_img/160x300.png" alt="">
+                </aside>
+            </div>
+            `;
+        /////////////////////////////////////////////////////////
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        ///////////////////////////
+    </script>
+</body>
+
+</html>

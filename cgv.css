@@ -576,8 +576,10 @@ a {
 }
 .pno1_li:nth-child(5),
 .pno1_li:nth-child(10),
+.pno1_li:nth-child(15),
 .pno2_li:nth-child(5),
-.pno2_li:nth-child(10) {
+.pno2_li:nth-child(10),
+.pno2_li:nth-child(15) {
     margin-right: 0px;
 
 }

@@ -1,0 +1,285 @@
+.minfo_main {
+    width: 980px;
+    margin: 50px auto;
+}
+
+.minfo_article {
+    display: flex;
+    height: 260px;
+    gap: 30px;
+}
+
+.minfo_aside {
+    width: 185px;
+    /* background-image: url(./cgv_img/movie/78085_320.jpg); */
+    background-size: cover;
+    position: relative;
+}
+
+.btn_plus {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 0;
+    bottom: 5px;
+    text-align: center;
+    line-height: 15px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+
+}
+
+.minfo_moviescript {
+    width: calc(100% - 185px);
+}
+
+.minfo_upper {
+    border-bottom: 1px solid black;
+    height: 90px;
+}
+
+.minfo_upper>b {
+    font-size: 1.5em;
+}
+
+.onboard {
+    width: 35px;
+    height: 20px;
+    color: #3e82a4;
+    border: 2px solid #3e82a4;
+    padding: 0 2px;
+    margin: 0 15px;
+    padding: 3px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.minfo_upper>div {
+    display: flex;
+    align-items: center;
+}
+
+.minfo_upper>span {
+    font-size: 0.8em;
+}
+
+.minfo_down {
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.minfo_down>ul {
+    display: flex;
+    gap: 10px;
+}
+
+.minfo_freeegg {
+    width: 104px;
+    height: 33px;
+    border: 1px solid #222222;
+    color: #222222;
+    font-size: 14px;
+    border-radius: 5px;
+    line-height: 33px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minfo_cinema_tag {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.minfo_cinema_tag>div {
+    width: 80px;
+    height: 56px;
+    background: url(./cgv_img/sprite_screentype_v3.png) no-repeat;
+    background-position: 0 -940px;
+}
+
+.minfo_res {
+    width: 91px;
+    height: 35px;
+    background-color: #FF4A58;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    line-height: 33px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minfo_data {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.minfo_data_article {
+    width: 800px;
+}
+
+.minfo_data_nav {
+    width: 800px;
+    height: 39px;
+}
+
+.minfo_data_nav>ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.minfo_data_nav li {
+    background-color: #FF4A58;
+    color: white;
+    height: 100%;
+    padding: 3px 15px;
+    line-height: 39px;
+    cursor: pointer;
+}
+
+.minfo_story {
+    width: 100%;
+    height: 350px;
+    margin: 20px 10px;
+}
+
+.minfo_trailer {
+    width: 100%;
+    height: 40px;
+    background-color: #f6f6f6;
+    line-height: 40px;
+}
+
+.minfo_trailer>b {
+    padding-left: 5px;
+}
+
+.minfo_trailer>span {
+    padding-left: 5px;
+}
+
+.minfo_trailer>a {
+    width: 15px;
+    height: 15px;
+    background-color: #9fa0a0;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+.minfo_trailer_ul {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    gap: 10px;
+}
+
+.box_img {
+    width: 260px;
+    height: 142px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.box_img>img {
+    width: 100%;
+}
+
+.btn_play {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FF4A58;
+    right: 5px;
+    bottom: 5px;
+}
+
+.btn_play>img {
+    width: 100%;
+}
+
+.icon {
+    width: 15px;
+    height: 8px;
+    border: 1px solid #3e82a4;
+    font-size: 0.8em;
+    color: #3e82a4;
+    font-weight: bold;
+    padding: 0 2px;
+}
+
+.minfo_snap {
+    margin-top: 50px;
+    width: 100%;
+    height: 40px;
+    background-color: #f6f6f6;
+    line-height: 40px;
+}
+
+.minfo_snap>b {
+    padding-left: 5px;
+}
+
+.minfo_snap>span {
+    padding-left: 5px;
+}
+
+.minfo_snap>a {
+    width: 15px;
+    height: 15px;
+    background-color: #9fa0a0;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+.minfo_snap_ul {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.minfo_data_aside {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.swiper {
+    width: 800px;
+    height: 500px;
+    border-bottom: 2px solid #222222;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#swp_n,
+#swp_p {
+    color: #222222;
+}
