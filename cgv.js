@@ -20,7 +20,7 @@ for (let i = 0; i < MOVIE_LIST.length; i++) {
             else if (tag === '4DX') { tagHTML += '<img src="./cgv_img/forDX_white.png" alt="4DX">'; }
         }
     }
-    /////////////////// 224-2.페이지이동_연습2(상세페이지).html?itemNo=${ITEM_LIST[i].item_no}
+    ///////////////////
     pUl[0].innerHTML += `
                         <li class="pno1_li">
                     <div class="charcard charcard1" style="background-image: url(./cgv_img/movie/${MOVIE_LIST[i].src});">
@@ -35,7 +35,7 @@ for (let i = 0; i < MOVIE_LIST.length; i++) {
                                 <img src="${MOVIE_LIST[i].age === '전체관람가' ? './cgv_img/all.svg'
                                             : MOVIE_LIST[i].age === '12세이상관람가' ? './cgv_img/12.svg'
                                                 : MOVIE_LIST[i].age === '15세이상관람가' ? './cgv_img/15.svg'
-                                                    : './cgv_img/19.svg'}" alt="">
+                                                    : './cgv_img/19.svg'}" alt="age">
                             </div>
                         <div class="u_bar">
                             <div class="bar_txt">${MOVIE_LIST[i].movie_no + 1}</div>
@@ -50,7 +50,7 @@ for (let i = 0; i < MOVIE_LIST.length; i++) {
                             <div class="like">
                                 <img src="${MOVIE_LIST[i].grade >= 90 ? './cgv_img/eggGoldenegggreat.png'
                                             : MOVIE_LIST[i].grade >= 80 ? './cgv_img/eggGoldenegggood.png'
-                                                : './cgv_img/eggGoldenegg.png'}" alt="">  
+                                                : './cgv_img/eggGoldenegg.png'}" alt="egg">  
                                 <p>${MOVIE_LIST[i].grade}%</p>
                             </div>
                             <div class="rese">예매율 ${MOVIE_LIST[i].res_per}%</div>
@@ -83,7 +83,7 @@ let diffDays = diffTime / (1000 * 60 * 60 * 24);
                             <img src="${MOVIE_LIST[i].age === '전체관람가' ? './cgv_img/all.svg'
                                         : MOVIE_LIST[i].age === '12세이상관람가' ? './cgv_img/12.svg'
                                             : MOVIE_LIST[i].age === '15세이상관람가' ? './cgv_img/15.svg'
-                                                : './cgv_img/19.svg'}" alt="">
+                                                : './cgv_img/19.svg'}" alt="age">
                         </div>
                         <div class="dday">${diffDays < 0 ? '오픈'
                                             : `D-${diffDays}`}</div>
@@ -100,7 +100,7 @@ let diffDays = diffTime / (1000 * 60 * 60 * 24);
                             <div class="like">
                                 <img src="${MOVIE_LIST[i].grade >= 90 ? './cgv_img/eggGoldenegggreat.png'
                                             : MOVIE_LIST[i].grade >= 80 ? './cgv_img/eggGoldenegggood.png'
-                                                : './cgv_img/eggGoldenegg.png'}" alt="">  
+                                                : './cgv_img/eggGoldenegg.png'}" alt="egg">  
                                 <p>${MOVIE_LIST[i].grade}%</p>
                             </div>
                             <div class="rese">예매 예정</div>
@@ -190,15 +190,15 @@ const muteButton = document.getElementsByClassName("mak_mute")[0];
 playButton.addEventListener("click", function () {
     if (video.paused) {
         video.play(); // 비디오 재생
-        playButton.innerHTML = "일시 정지"; // 버튼 텍스트 변경
+        playButton.innerHTML = `<img src="./cgv_img/pause.png" alt="pause">`; 
     } else {
         video.pause(); // 비디오 일시 정지
-        playButton.innerHTML = "재생"; // 버튼 텍스트 변경
+        playButton.innerHTML = `<img src="./cgv_img/play.png" alt="play">`; 
     }
 });
 /////////////////////////////////////////////////////////
 // 음소거 버튼 클릭 시 음소거/음소거 해제
 muteButton.addEventListener("click", function () {
     video.muted = !video.muted; // 음소거 토글
-    muteButton.innerHTML = video.muted ? "음소거 해제" : "음소거"; // 버튼 텍스트 변경
+    muteButton.innerHTML = video.muted ? `<img src="./cgv_img/soundOff.png" alt="mute">` : `<img src="./cgv_img/volume.png" alt="volume">`; // 버튼 텍스트 변경
 });

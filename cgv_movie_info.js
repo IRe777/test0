@@ -20,7 +20,7 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
                 <img src="${movie.age == '전체관람가' ? './cgv_img/all.svg'
                                         : movie.age == '12세이상관람가' ? './cgv_img/12.svg'
                                             : movie.age == '15세이상관람가' ? './cgv_img/15.svg'
-                                                : './cgv_img/19.svg'}" alt="">
+                                                : './cgv_img/19.svg'}" alt="age">
             </div>
             <a href="./cgv_img/movie/${movie.src}">
                 <div class="btn_plus">+</div>
@@ -30,7 +30,7 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
             <div class="minfo_upper">
                 <b>${movie.title}</b><span class="onboard">현재 상영중</span><br>
                 <span>${movie.etitle}</span>
-                <div>예매율 ${movie.res_per}% | <img src="./cgv_img/eggGoldenegg.png" alt="">${movie.grade}</div>
+                <div>예매율 ${movie.res_per}% | <img src="./cgv_img/eggGoldenegg.png" alt="egg">${movie.grade}</div>
             </div>
             <div class="minfo_down">
                 <div class="minfo_txt">
@@ -39,7 +39,7 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
                     <span>개봉 : ${movie.open}</span>
                 </div>
                 <ul>
-                    <li class="minfo_freeegg"><img src="./cgv_img/eggGoldenegg.png" alt="">프리에그</li>
+                    <li class="minfo_freeegg"><img src="./cgv_img/eggGoldenegg.png" alt="egg">프리에그</li>
                     <li class="minfo_res">예매하기</li>
                 </ul>
                 <div class="minfo_cinema_tag">
@@ -52,7 +52,7 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
         <article class="minfo_data_article">
             <nav class="minfo_data_nav">
                 <ul>
-                    <li><img src="./cgv_img/ico_finger.png" alt="">주요정보</li>
+                    <li><img src="./cgv_img/ico_finger.png" alt="info">주요정보</li>
                     <li>감독/출연</li>
                     <li>트레일러</li>
                     <li>스틸컷</li>
@@ -77,13 +77,13 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
                 </span>
             </div>
             <!-- 그래프 생략 -->
-            <div class="middle_ad"><img src="./cgv_img/0318_800x90.jpg" alt=""></div>
+            <div class="middle_ad"><img src="./cgv_img/0318_800x90.jpg" alt="ad"></div>
             <div class="minfo_trailer"><b>트레일러</b><span>6건</span><a href="#">+</a></div>
             <ul class="minfo_trailer_ul">
                 <li>
                     <div class="box_img">
-                        <img src="./cgv_img/89058235308_1024.jpg" alt="">
-                        <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                        <img src="./cgv_img/89058235308_1024.jpg" alt="thum">
+                        <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt="playbtn"></div>
                     </div>
                     <div class="minfo_content">
                         <span class="icon">HD</span><b>GIFT</b><br>
@@ -92,8 +92,8 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
                 </li>
                 <li>
                     <div class="box_img">
-                        <img src="./cgv_img/89058235257_1024.jpg" alt="">
-                        <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
+                        <img src="./cgv_img/89058235257_1024.jpg" alt="thum">
+                        <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt="playbtn"></div>
                     </div>
                     <div class="minfo_content">
                         <span class="icon">HD</span><b>Price Of One Review</b><br>
@@ -102,7 +102,7 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
                 </li>
                 <li>
                     <div class="box_img">
-                        <img src="./cgv_img/89058235256_1024.jpg" alt="">
+                        <img src="./cgv_img/89058235256_1024.jpg" alt="thum">
                         <div class="btn_play"><img src="./cgv_img/play-regular-24.png" alt=""></div>
                     </div>
                     <div class="minfo_content">
@@ -114,26 +114,26 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
             <div class="minfo_snap"><b>스틸컷</b><span>1/21건</span><a href="#">+</a></div>
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/1.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/2.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/3.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/4.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/5.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/6.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/7.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/8.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/9.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/10.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/11.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/12.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/13.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/14.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/15.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/16.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/17.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/18.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/19.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="./cgv_img/0_snap/20.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/1.jpg" alt="snap1"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/2.jpg" alt="snap2"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/3.jpg" alt="snap3"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/4.jpg" alt="snap4"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/5.jpg" alt="snap5"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/6.jpg" alt="snap6"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/7.jpg" alt="snap7"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/8.jpg" alt="snap8"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/9.jpg" alt="snap9"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/10.jpg" alt="snap10"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/11.jpg" alt="snap11"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/12.jpg" alt="snap12"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/13.jpg" alt="snap13"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/14.jpg" alt="snap14"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/15.jpg" alt="snap15"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/16.jpg" alt="snap16"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/17.jpg" alt="snap17"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/18.jpg" alt="snap18"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/19.jpg" alt="snap19"></div>
+                    <div class="swiper-slide"><img src="./cgv_img/0_snap/20.jpg" alt="snap20"></div>
                 </div>
                 <div class="swiper-button-next" id="swp_n"></div>
                 <div class="swiper-button-prev" id="swp_p"></div>
@@ -141,8 +141,8 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
             </div>
         </article>
         <aside class="minfo_data_aside">
-            <img src="./cgv_img/0318_160x300.jpg" alt="">
-            <img src="./cgv_img/160x300.png" alt="">
+            <img src="./cgv_img/0318_160x300.jpg" alt="ad">
+            <img src="./cgv_img/160x300.png" alt="ad">
         </aside>
     </div>
     `;
