@@ -281,6 +281,9 @@
     height: 100%;
     object-fit: contain;
 }
+#minfo_id .swiper-pagination-bullet-active {
+    background-color: black;
+}
 #swp_n,
 #swp_p {
     color: #222222;
