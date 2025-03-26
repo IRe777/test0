@@ -49,7 +49,7 @@ let pUlMinfo = document.getElementsByClassName(`minfo_main`);
         </aside>
     </article>
     <div class="minfo_data">
-        <article class="minfo_data_article">
+        <article class="minfo_data_article" id="minfo_id">
             <nav class="minfo_data_nav">
                 <ul>
                     <li><img src="./cgv_img/ico_finger.png" alt="info">주요정보</li>
